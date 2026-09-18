@@ -5,3 +5,103 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --tx-color-dark: #403F3D;
+  --tx-color-accent: #B0907A;
+  --border-primary: #C1B6AD;
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--tx-color-dark);
+  background: #E1D4C9;
+}
+
+.header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link,
+.menu-btn {
+  padding: 5px 0;
+  text-decoration: none;
+  color: var(--tx-color-dark);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link:hover,
+.menu-btn:hover {
+  color: var(--tx-color-accent);
+  border-bottom-color: var(--tx-color-dark);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Theme switcher (capsule) */
+.theme-toggle {
+  width: 88px;
+  height: 44px;
+  border-radius: 100px;
+  border: 1px solid var(--border-primary);
+  background-color: var(--color-bg-toggle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-toggle__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Simulation of an active circle for switching the theme */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 36px;
+  height: 36px;
+  background-color: var(--tx-color-accent);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
