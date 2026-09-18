@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color-inverse: #E1D4C9;
+  --tx-color-dark: #403F3D;
+  --tx-color-accent: #B0907A;
+  --border-primary: #C1B6AD;
+  --font-main: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--tx-color-dark);
+  background: #E1D4C9;
+}
+
+.header,
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link,
+.menu-btn {
+  padding: 5px 0;
+  text-decoration: none;
+  color: var(--tx-color-dark);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.nav__link:hover,
+.menu-btn:hover {
+  color: var(--tx-color-accent);
+  border-bottom-color: var(--tx-color-dark);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Theme switcher (capsule) */
+.theme-toggle {
+  width: 88px;
+  height: 44px;
+  border-radius: 100px;
+  border: 1px solid var(--border-primary);
+  background-color: var(--color-bg-toggle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-toggle__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Simulation of an active circle for switching the theme */
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  width: 36px;
+  height: 36px;
+  background-color: var(--tx-color-accent);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 60px 100px;
+  margin: 0 40px;
+  min-height: 644px;
+  border-radius: 40px;
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%),
+    url('./assets/img-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.hero__content {
+  font-family: var(--font-main);
+  max-width: 530px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__title {
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  align-self: stretch;
+}
+
+.hero__title--accent {
+  color: #B0907A;
+  font-style: italic;
+}
+
+.hero__description {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #F8F1EB;
+  margin: 0 0 40px 0;
+}
+
+.btn-menu__icon {
+  display: none;
+  transition: transform 0.5s ease;
+}
+
+.btn-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 200px;
+  height: 64px;
+  background-color: var(--bg-color-inverse);
+  color: var(--tx-color-dark);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-menu:hover .btn-menu__icon {
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.btn-menu:active {
+  transform: scale(0.98);
+}
