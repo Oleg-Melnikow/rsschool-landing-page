@@ -14,7 +14,7 @@
     <nav class="header__nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="#" class="nav__link">Favorite coffee</a>
+          <a href="#Favorite" class="nav__link">Favorite coffee</a>
         </li>
         <li class="nav__item">
           <a href="#" class="nav__link">About</a>
@@ -62,6 +62,45 @@
             <img src="./assets/coffee-cup.svg" alt="coffee-cup" />
           </span>
         </a>
+      </div>
+    </section>
+    <section class="coffee-slider" id="Favorite">
+      <h2 class="coffee-slider__title">
+        Choose your
+        <span class="coffee-slider__title--accent">favorite</span>
+        coffee
+      </h2>
+      <div class="coffee-slider__body">
+        <button class="coffee-slider__arrow coffee-slider__arrow--prev" aria-label="prev slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="coffee-slider__slide">
+          <div class="coffee-slide__image-wrapper">
+            <img src="./assets/coffee-slider-1.png" alt="S'mores Frappuccino" class="coffee-slide__image">
+          </div>
+          <div class="coffee-slide__content">
+            <h3 class="coffee-slide__title">
+              S'mores Frappuccino
+            </h3>
+            <p class="coffee-slide__description">
+              This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.
+            </p>
+            <span class="coffee-slide__price">$5.50</span>
+          </div>
+        </div>
+        <button class="coffee-slider__arrow coffee-slider__arrow--next" aria-label="next slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="coffee-slider__pagination pagination">
+        <button class="pagination__bullet pagination__bullet--active">
+        </button>
+        <button class="pagination__bullet"></button>
+        <button class="pagination__bullet"></button>
       </div>
     </section>
   </main>
