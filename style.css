@@ -211,7 +211,8 @@ main {
 }
 
 .coffee-slider__title,
-.about-us__title {
+.about-us__title,
+.download-app__title {
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
@@ -221,7 +222,8 @@ main {
 }
 
 .coffee-slider__title--accent,
-.about-us__title--accent {
+.about-us__title--accent,
+.download-app__title--accent {
   color: var(--tx-color-accent);
   font-style: italic;
 }
@@ -298,7 +300,8 @@ main {
   line-height: 125%;
 }
 
-.coffee-slide__description {
+.coffee-slide__description,
+.download-app__description {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -333,7 +336,8 @@ main {
   font-family: var(--font-main);
 }
 
-.about-us__title {
+.about-us__title,
+.download-app__title {
   text-align: left;
 }
 
@@ -389,4 +393,91 @@ main {
 .gallery__item--bottom-left {
   grid-column: 1;
   grid-row: 3 / span 2;
+}
+
+.download-app {
+  width: 100%;
+  padding: 100px 40px;
+  font-family: var(--font-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.download-app__content {
+  flex: 0 1 630px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--tx-color-dark);
+}
+
+.download-app__description {
+  margin-bottom: 40px;
+}
+
+.download-app__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  height: 64px;
+  padding: 12px 20px;
+  border: 1px solid var(--border-container);
+  border-radius: 100px;
+  text-decoration: none;
+  color: var(--tx-color-dark);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.app-btn:hover {
+  background-color: var(--tx-color-dark);
+  color: var(--bg-color-inverse);
+}
+
+.app-btn__icon path {
+  flex-shrink: 0;
+}
+
+.app-btn:hover .app-btn__icon path {
+  fill: var(--bg-color-inverse);
+}
+
+.app-btn__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-btn__subtitle {
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.app-btn__title {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.download-app__visual {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 630px;
+  height: 630px;
+}
+
+.phones__image {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
 }
