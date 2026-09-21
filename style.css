@@ -15,6 +15,10 @@
   --font-main: 'Inter', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
@@ -264,7 +268,7 @@ main {
 .hero__title--accent,
 .coffee-slider__title--accent,
 .about-us__title--accent,
-.download-app__title--accen,
+.download-app__title--accent,
 .footer__heading--accent,
 .menu__title--accent {
   color: var(--tx-color-accent);
@@ -808,6 +812,12 @@ main {
     margin-top: 40px;
   }
 
+  .footer-container {
+    gap: 30px;
+    justify-content: space-between;
+    padding: 100px 60px;
+  }
+
 }
 
 @media (max-width: 930px) {
@@ -822,6 +832,11 @@ main {
   .download-app__visual {
     max-width: 630px;
     height: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -848,6 +863,10 @@ main {
     padding: 100px 60px;
   }
 
+  .coffee-slider__body {
+    gap: 0;
+  }
+
   .about-us__grid {
     display: flex;
     flex-direction: column;
@@ -858,8 +877,132 @@ main {
   }
 
   .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 100px 60px;
+  }
+
+}
+
+@media screen and (max-width: 730px) {
+  .menu__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  .hero,
+  .footer-container {
+    padding: 60px 40px;
+  }
+
+  .hero__title {
+    font-size: 52px;
+  }
+
+  .coffee-slider__title,
+  .about-us__title,
+  .download-app__title,
+  .menu__title,
+  .footer__heading {
+    font-size: 42px;
+  }
+
+  .coffee-slider__viewport,
+  .coffee-slider__slide,
+  .coffee-slide__image {
+    max-width: 348px;
+  }
+
+  .coffee-slide__image-wrapper {
+    height: 100%;
+  }
+
+  .phones__image {
+    max-width: 500px;
+  }
+
+  .footer-container {
+    gap: 60px;
+  }
+
+}
+
+@media screen and (max-width: 570px) {
+
+  .header {
+    padding: 20px 16px;
+  }
+
+  .phones__image {
+    max-width: 348px;
+    height: 100%;
+  }
+
+  .hero__title {
+    font-size: 42px;
+    line-height: 115%;
+  }
+
+  .hero {
+    align-items: flex-start;
+    margin: 0 16px;
+  }
+
+  .hero,
+  .footer-container {
+    padding: 60px 16px;
+  }
+
+  .hero__title,
+  .hero__description {
+    margin-bottom: 40px;
+  }
+
+  .coffee-slider {
+    margin: 100px 16px;
+  }
+
+  .coffee-slider__body {
+    justify-content: center;
+  }
+
+  .coffee-slider__arrow {
+    display: none;
+  }
+
+  .about-us {
+    padding: 0 16px;
+  }
+
+  .gallery__item {
+    height: 590px;
+  }
+
+  .download-app {
+    padding: 100px 16px;
+  }
+
+  .download-app__buttons {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    margin: 0 16px;
+  }
+
+  .coffee-slider__title,
+  .about-us__title,
+  .download-app__title,
+  .menu__title,
+  .footer__heading {
+    font-size: 32px;
+  }
+
+  .menu {
+    padding: 0 16px 100px;
+  }
+
+  .tabs {
+    gap: 8px;
   }
 }
