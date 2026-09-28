@@ -120,14 +120,14 @@
         <span class="coffee-slider__title--accent">favorite</span>
         coffee
       </h2>
-      <div class="coffee-slider__body">
-        <button class="coffee-slider__arrow coffee-slider__arrow--prev" aria-label="prev slide">
+      <div class="coffee-slider__body" id="touchArea">
+        <button id="arrow-prev" class="coffee-slider__arrow coffee-slider__arrow--prev" aria-label="prev slide">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
         <div class="coffee-slider__viewport">
-          <div class="coffee-slider__track">
+          <div class="coffee-slider__track" id="sliderTrack">
             <div class="coffee-slider__slide">
               <div class="coffee-slide__image-wrapper">
                 <img src="./assets/coffee-slider-1.png" alt="S'mores Frappuccino" class="coffee-slide__image">
@@ -172,14 +172,14 @@
             </div>
           </div>
         </div>
-        <button class="coffee-slider__arrow coffee-slider__arrow--next" aria-label="next slide">
+        <button id="arrow-next" class="coffee-slider__arrow coffee-slider__arrow--next" aria-label="next slide">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
       <div class="coffee-slider__pagination pagination">
-        <button class="pagination__bullet pagination__bullet--active">
+        <button class="pagination__bullet active">
         </button>
         <button class="pagination__bullet"></button>
         <button class="pagination__bullet"></button>
@@ -324,5 +324,6 @@
     </div>
   </footer>
   <script src="index.js"></script>
+  <script src="./data/slider.js"></script>
 </body>
 </html>
