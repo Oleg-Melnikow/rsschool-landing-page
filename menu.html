@@ -92,19 +92,19 @@
         </span>
       </h1>
       <div class="menu__tabs tabs">
-        <button class="tabs__btn tabs__btn--active">
+        <button class="tabs__btn active" data-category="coffee">
           <span class="tabs__icon">
             <img src="./assets/coffee.png" alt="coffee" aria-hidden="true">
           </span>
           Coffee
         </button>
-        <button class="tabs__btn">
+        <button class="tabs__btn" data-category="tea">
           <span class="tabs__icon">
             <img src="./assets/tea-sm.png" alt="tea" aria-hidden="true">
           </span>
           Tea
         </button>
-        <button class="tabs__btn">
+        <button class="tabs__btn" data-category="dessert">
           <span class="tabs__icon">
             <img src="./assets/dessert.png" alt="dessert" aria-hidden="true">
           </span>
@@ -112,136 +112,8 @@
         </button>
       </div>
       <div class="menu__grid">
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-1.jpg" alt="Irish coffee" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Irish coffee
-            </p>
-            <p class="product-card__description">
-              Fragrant black coffee with Jameson Irish whiskey and whipped milk
-            </p>
-            <span class="product-card__price">
-              $7.00
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-2.jpg" alt="Kahlua coffee" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Kahlua coffee
-            </p>
-            <p class="product-card__description">
-              Classic coffee with milk and Kahlua liqueur under a cap of frothed milk
-            </p>
-            <span class="product-card__price">
-              $7.00
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-3.jpg" alt="Honey raf" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Honey raf
-            </p>
-            <p class="product-card__description">
-              Espresso with frothed milk, cream and aromatic honey
-            </p>
-            <span class="product-card__price">
-              $5.50
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-4.jpg" alt="Ice cappuccino" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Ice cappuccino
-            </p>
-            <p class="product-card__description">
-              Cappuccino with soft thick foam in summer version with ice
-            </p>
-            <span class="product-card__price">
-              $5.00
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-5.jpg" alt="Espresso" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Espresso
-            </p>
-            <p class="product-card__description">
-              Classic black coffee
-            </p>
-            <span class="product-card__price">
-              $4.50
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-6.jpg" alt="Latte" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Latte
-            </p>
-            <p class="product-card__description">
-              Espresso coffee with the addition of steamed milk and dense milk foam
-            </p>
-            <span class="product-card__price">
-              $5.50
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-7.jpg" alt="Latte macchiato" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Latte macchiato
-            </p>
-            <p class="product-card__description">
-              Espresso with frothed milk and chocolate
-            </p>
-            <span class="product-card__price">
-              $5.50
-            </span>
-          </div>
-        </div>
-        <div class="menu__card product-card">
-          <div class="product-card__image-box">
-            <img src="./assets/coffee-8.jpg" alt="Coffee with cognac" class="product-card__image">
-          </div>
-          <div class="product-card__content">
-            <p class="product-card__title">
-              Coffee with cognac
-            </p>
-            <p class="product-card__description">
-              Fragrant black coffee with cognac and whipped cream
-            </p>
-            <span class="product-card__price">
-              $6.50
-            </span>
-          </div>
-        </div>
       </div>
-      <button class="btn-refresh">
+      <button class="btn-refresh" id="refresh">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
@@ -315,5 +187,6 @@
     </div>
   </footer>
   <script src="index.js"></script>
+  <script type="module" src="./data/catalog.js"></script>
 </body>
 </html>
