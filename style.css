@@ -451,11 +451,12 @@ main {
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.8s ease;
 }
 
-.pagination__bullet--active {
+.pagination__bullet.active {
   background-color: var(--bd-color-inverse);
+  transition: background-color 0.8s ease;
 }
 
 .about-us {
