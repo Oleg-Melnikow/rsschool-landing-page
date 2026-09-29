@@ -32,7 +32,9 @@ function showMenu() {
 
 function onCloseMenu() {
   document.body.style.overflow = "";
-  showMenu();
+  menuBlock.classList.remove("show");
+  menu.classList.remove("activate");
+  burgerButton.classList.remove("active");
 }
 
 links.forEach((el) => {
