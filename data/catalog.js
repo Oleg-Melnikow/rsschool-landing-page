@@ -65,6 +65,8 @@ function updateCategoryList(selectedCategory) {
           </div>`;
 
     productsContainer.append(cardProduct);
+
+    openModal(product, cardProduct, index);
   });
   if (productsAll.length <= 4) {
     changeRefreshStyle("none");
@@ -73,7 +75,7 @@ function updateCategoryList(selectedCategory) {
 
 updateCategoryList(selectedCategory);
 
-refresh.addEventListener("click", (event) => {
+refresh.addEventListener("click", () => {
   isRefresh = true;
   changeRefreshStyle("none");
   updateCategoryList(selectedCategory);
@@ -87,5 +89,101 @@ mediaQueryRefreshBtn.addEventListener("change", (e) => {
     updateCategoryList(selectedCategory);
   } else {
     updateCategoryList(selectedCategory);
+  }
+});
+
+// Create modal block
+const productModal = document.getElementById("product-modal");
+
+function openModal(product, cardProduct, index) {
+  cardProduct.addEventListener("click", () => {
+    document.body.style.overflow = "hidden";
+    productModal.style.display = "flex";
+
+    const popup = document.querySelector(".popup");
+
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("btn__close-modal");
+    closeButton.textContent = "Close";
+
+    popup.innerHTML = `
+              <div class="modal-image">
+                <img src="./assets/${product.category}-${index + 1}.jpg" alt="${product.name}">
+              </div>
+              <div class="product-data">
+                <div class="product-info">
+                  <p class="product-name">${product.name}</p>
+                  <p class="product-description ">${product.description}</p>
+                </div>
+                ${createTabsModal(product.sizes, "size")}
+                ${createTabsModal(product.additives, "additives")}
+                <div class="product-price">
+                  <p>Total:</p>
+                  <p>$${product.price}</p>
+                </div>
+                <div class="product-alert">
+                  <div class="alert-icon"></div>
+                  <div class="alert-title">
+                    The cost is not final. Download our mobile app to see the final price and place your order. 
+                    Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                  </div>
+                </div>
+              </div>
+    `;
+
+    const containerData = popup.querySelector(".product-data");
+    containerData.append(closeButton);
+
+    closeButton.addEventListener("click", () => {
+      onCloseModal();
+    });
+  });
+}
+
+function createTabsModal(tabsData, type) {
+  const tabsArray = Object.entries(tabsData);
+
+  const tabsContainer = document.createElement("div");
+  tabsContainer.classList.add(`${type}-items`);
+
+  let listTabs = "";
+
+  tabsArray.forEach((item) => {
+    const [name, data] = item;
+    const correctName = type === "size" ? name : +name + 1;
+
+    listTabs += `
+        <button class="tabs__${type}">
+          <span class="tabs__icon">
+            ${correctName}
+          </span>
+          ${data?.size || data?.name}
+        </button>`;
+  });
+
+  const containerTabs = `
+                <div class="product-tabs">
+                  <p class="tabs-tite">${type}</p>
+                  <div class="tabs-items">
+                    ${listTabs}
+                  </div>
+                </div>`;
+  return containerTabs;
+}
+
+productModal?.addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) {
+    onCloseModal();
+  }
+});
+
+function onCloseModal() {
+  document.body.style.overflow = "";
+  productModal.style.display = "none";
+}
+
+document.addEventListener("keyup", (event) => {
+  if (event.key === "Escape") {
+    onCloseModal();
   }
 });
