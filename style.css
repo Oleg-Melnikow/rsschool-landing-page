@@ -1285,10 +1285,6 @@ main {
   border: 1px solid var(--bd-color-primary);
 }
 
-.tabs-items button:hover {
-  background-color: var(--bg-color-container);
-}
-
 .btn__close-modal:hover {
   cursor: pointer;
   border-color: var(--bg-color-container);
@@ -1297,17 +1293,24 @@ main {
 }
 
 .dark-theme .btn__close-modal:hover,
-.dark-theme .tabs-items button:hover {
+.dark-theme .tabs-items button:hover,
+.dark-theme .tabs-items button.active {
   background-color: var(--bg-color-overlay);
 }
 
-.tabs-items button:hover {
+.dark-theme .tabs-items button.active span {
+  background-color: var(--bg-color-container);
+}
+
+.tabs-items button:hover,
+.tabs-items button.active {
   background-color: var(--bg-color-container);
   color: var(--tx-color-inverse);
   border-color: var(--bg-color-container);
 }
 
-.tabs-items button:hover span {
+.tabs-items button:hover span,
+.tabs-items button.active span {
   color: var(--tx-color-primary);
 }
 

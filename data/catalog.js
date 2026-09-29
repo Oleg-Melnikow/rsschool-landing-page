@@ -119,7 +119,7 @@ function openModal(product, cardProduct, index) {
                 ${createTabsModal(product.additives, "additives")}
                 <div class="product-price">
                   <p>Total:</p>
-                  <p>$${product.price}</p>
+                  <p id="price-order" data-order="${product.price}">$${product.price}</p>
                 </div>
                 <div class="product-alert">
                   <div class="alert-icon"></div>
@@ -137,23 +137,66 @@ function openModal(product, cardProduct, index) {
     closeButton.addEventListener("click", () => {
       onCloseModal();
     });
+
+    const tabs = popup.querySelectorAll(".tabs-items");
+
+    tabs.forEach((tabItem) => {
+      changeProductSize(tabItem);
+    });
+  });
+}
+
+function changeProductSize(tabItem) {
+  tabItem.addEventListener("click", (event) => {
+    const priceOrder = document.getElementById("price-order");
+    let priceCurrrent = +priceOrder.dataset.order;
+
+    const currentTab = event.target.closest("[data-tabs]");
+    const changeBtnSize = event.target.closest(".tabs__size");
+    const changeAdditives = event.target.closest(".tabs__additives");
+
+    if (!currentTab) return;
+
+    if (changeBtnSize) {
+      const currentActive = tabItem.querySelector(".tabs__size.active");
+
+      if (currentActive) {
+        currentActive.classList.remove("active");
+        priceCurrrent -= +currentActive.dataset.price;
+      }
+      changeBtnSize.classList.add("active");
+
+      changeBtnSize.dataset.price;
+      priceCurrrent += +changeBtnSize.dataset.price;
+    }
+
+    if (changeAdditives) {
+      changeAdditives.classList.toggle("active");
+      const isActive = changeAdditives.classList.contains("active");
+
+      if (isActive) {
+        priceCurrrent += +changeAdditives.dataset.price;
+      } else {
+        priceCurrrent -= +changeAdditives.dataset.price;
+      }
+    }
+
+    priceOrder.innerHTML = `$${priceCurrrent.toFixed(2)}`;
+    priceOrder.dataset.order = priceCurrrent;
   });
 }
 
 function createTabsModal(tabsData, type) {
   const tabsArray = Object.entries(tabsData);
-
-  const tabsContainer = document.createElement("div");
-  tabsContainer.classList.add(`${type}-items`);
-
   let listTabs = "";
 
-  tabsArray.forEach((item) => {
+  tabsArray.forEach((item, index) => {
     const [name, data] = item;
     const correctName = type === "size" ? name : +name + 1;
+    const isActive = type === "size" && !index ? " active" : "";
 
     listTabs += `
-        <button class="tabs__${type}">
+        <button class="tabs__${type}${isActive}" data-tabs="${type}" data-price="${data["add-price"]}">
           <span class="tabs__icon">
             ${correctName}
           </span>
@@ -164,7 +207,7 @@ function createTabsModal(tabsData, type) {
   const containerTabs = `
                 <div class="product-tabs">
                   <p class="tabs-tite">${type}</p>
-                  <div class="tabs-items">
+                  <div class="tabs-items" id="tabs-${type}">
                     ${listTabs}
                   </div>
                 </div>`;
